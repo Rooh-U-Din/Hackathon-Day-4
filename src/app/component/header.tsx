@@ -13,12 +13,12 @@ const Header = () => {
             <div className="flex">
                 <Image src="/photos/Search.png" alt="search" height={100} width={100} className="sm:hidden md:block md:h-[16] md:w-[16] md:ml-[28]  md:mt-[26] " />
                 <Link href="/" passHref><h1 className="h-[30] w-[65] mt-5 ml-6 font-clash text-2xl md:ml-[687] md:mt-[20] cursor-pointer">Avion</h1></Link>
-                <div className=" flex mt-[26] ml-auto h-[16] gap-[20] md:absolute md:ml-[1364]">
+                <div className=" flex mt-[26] ml-auto h-[16] gap-[20] md:absolute xl:ml-[1364] md:ml-[1200]">
 
                     <Image src="/photos/Search.png" alt="search" height={20} width={20} className=" h-[16] w-[16] md:hidden" />
                     <Image src="/photos/Menu.png" alt="search" height={20} width={20} className="h-[16] w-[16] md:hidden" />
                     <Link href="./shopping" passHref> <Image src="/photos/Shopping--cart.png" alt="cart" height={20} width={20} className=" sm:hidden md:block md:h-[16] md:w-[16]" /> </Link>
-                    <Link href="./about" passHref>   <Image src="/photos/User--avatar.png" alt="cart" height={20} width={20} className="sm:hidden md:block md:h-[16] md:w-[16]" /></Link>
+                    <Link href="./about" passHref>   <Image src="/photos/User--avatar.png" alt="cart" height={20} width={20} className="sm:hidden md:block md:h-[16] md:w-[16] "/></Link>
                 </div>
             </div>
 
