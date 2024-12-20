@@ -4,7 +4,7 @@ const ProductCom1 = () => {
     return (
         <div className="max-w-[390] md:max-w-[1440]">
             <div>
-                <Image src="/photos/Framesm.png" alt="" height={400} width={400} className="md:hidden h-[146] w-[390] mt-[69]"></Image>
+                <Image src="/photos/Framesm.png" alt="" height={400} width={400} className="md:hidden h-[146] w-[390] mt-[9]"></Image>
                 <Image src="/photos/Frame.png" alt="" height={400} width={400} className="sm:hidden md:block md:h-[209] md:w-[1440] mt-[69]"></Image>
             </div>
             <div className="flex mt-[94] ml-[24] gap-[20] md:hidden">

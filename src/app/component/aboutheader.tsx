@@ -17,7 +17,6 @@ const AboutH = () => {
             </div>
             <div className="h-[124] flex">
                 <h1 className="ml-[24] mt-[20] font-clash text-2xl md:absolute md:ml-[28] md:mt-[62]">Avion</h1>
-                <Image src="/photos/Menu.png" alt="menu" height={100} width={100} className="absolute h-[16] w-[16] ml-[350] mt-[27] md:hidden "></Image>
             </div>
             <div className="sm:hidden md:block absolute ml-[1047] mt-[-60]">
                 <ul className="font-satoshi flex gap-[32] text-gray-300 ">
