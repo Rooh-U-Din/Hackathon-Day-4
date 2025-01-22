@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 
 const Footer2 = () => {
@@ -42,6 +43,7 @@ const Footer2 = () => {
                 <button className=" font-satoshi lg:w-[118] lg:h-[56] md:w-[60] md:h-[56]  bg-white">Sign up</button>
                 </div>
             </div>
+
             <div>
                 <Image src="/photos/footerline.png" alt="" height={200} width={200} className="absolute xl:w-[1277] md:w-[700] h-px mt-[350] ml-[80]"></Image>
                 <span className="font-satoshi text-white absolute mt-[355] ml-[80]">Copyright 2022 Avion LTD</span>
@@ -54,6 +56,7 @@ const Footer2 = () => {
             <Image src="/photos/twitter.png" alt="" height={200} width={200} className="w-[24] h-[24] "></Image>
             <Image src="/photos/pinterest.png" alt="" height={200} width={200} className="w-[24] h-[24]"></Image>
             </div>
+            <Link href="/FAQs" passHref className="absolute mt-[250]"><button className=" font-satoshi w-[342] h-[36] ml-[1210] text-black bg-gray-100 mt-[32] md:w-[170] hover:text-blue-700">FAQs</button></Link>
             </div>
 
 

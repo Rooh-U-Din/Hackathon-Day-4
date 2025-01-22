@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const AboutCom2 = () => {
     return (
@@ -9,7 +10,8 @@ const AboutCom2 = () => {
                     <br /><br />
                     <p className="text-white font-satoshi">A global brand with local beginnings, our <br /> story begain in a small studio in South <br /> London in early 2014</p>
                     <br />
-                <button className="h-[56] w-[276] font-satoshi text-white  absolute bg-[rgb(78,77,147)] md:h-[56] md:w-[170] md:mt-[128]">View collection</button>
+                    <Link href="/product" passHref><button className="w-[170] h-[56] text-white bg-[rgb(78,77,147)] mt-[32] sm:hidden md:block">View Collection</button>
+    </Link>
                 </div>
                 <div className="absolute mt-[337]">
                 <Image src="/photos/Image Block.png" alt="img" height={300} width={300} className="w-[342] h-[259] md:w-[630] md:h-[478] md:ml-[730] md:mt-[-337]"></Image>

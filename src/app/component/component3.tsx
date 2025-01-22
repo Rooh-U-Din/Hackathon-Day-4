@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Component3 = () => {
     return (
@@ -61,7 +62,9 @@ const Component3 = () => {
                 
                 
             </div>
-            <button className="font-satoshi w-[342] h-[56] ml-[24] text-black bg-gray-100 mt-[32] md:w-[170] md:ml-[635]">View collection</button>
+       
+    <Link href="/product" passHref><button className="font-satoshi w-[342] h-[56] ml-[24] text-black bg-gray-100 mt-[32] md:w-[170] md:ml-[635]">View Collection</button>
+    </Link>
         </div>
     )
 

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Footer = () => {
     return (
@@ -42,6 +43,8 @@ const Footer = () => {
             </div>
             <Image src="/photos/Line 12.png" alt="Line" height={20} width={20} className=" absolute w-[314] h-px ml-6 mt-[135] " />
             <span className="absolute text-white text-sm ml-[113] mt-[140] font-clash">Copyright 2022 Avion LTD</span>
+            <Link href="/FAQs" passHref className="absolute mt-[-50]"><button className=" font-satoshi w-[152] h-[36] ml-[200] text-black bg-gray-100 mt-[32] md:w-[170] hover:text-blue-700">FAQs</button></Link>
+           
         </div>
     )
 }

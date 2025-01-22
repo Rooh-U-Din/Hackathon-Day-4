@@ -1,9 +1,46 @@
-import Image from "next/image"
+"use client";
+import { client } from "@/sanity/lib/client";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+
+type Product={
+  _id: string;
+  name:string;
+  imageUrl:string;
+  price:number;
+  description:string;
+
+};
 
 const ProductCom1 = () => {
-    return (
-        <div className="max-w-[390] md:max-w-[1440]">
-            <div>
+
+  const [products,setProducts] = useState<Product[]>([]);
+
+  useEffect(()=>{
+    const fetchProducts = async ()=>{
+
+      const query = `
+        *[_type=="product"]{
+        _id,
+            name,
+            price,
+            "imageUrl": image.asset->url,
+    }
+    `;
+    const fetchedProducts = await client.fetch(query);
+    setProducts(fetchedProducts);
+    };
+    fetchProducts();
+  })
+
+
+
+  return (
+
+    <div className="max-w-[390] md:max-w-[1440]">
+        <div>
                 <Image src="/photos/Framesm.png" alt="" height={400} width={400} className="md:hidden h-[146] w-[390] mt-[9]"></Image>
                 <Image src="/photos/Frame.png" alt="" height={400} width={400} className="sm:hidden md:block md:h-[209] md:w-[1440] mt-[69]"></Image>
             </div>
@@ -24,185 +61,28 @@ const ProductCom1 = () => {
                 </div>
 
             </div>
-
-            <br /><br />
-            <div className="sm:grid sm:grid-cols-2 ml-[24] md:flex md:gap-[20] md:ml-[80]">
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-
-                <div className="md:hidden">
-                    <Image src="/photos/Photo.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Photo.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Parent2.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent2.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Parent.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-
-            </div>
-            <br className="sm:hidden md:block" />
-
-            <div className="sm:hidden md:flex md:gap-[20] md:ml-[80]">
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-
-                <div className="md:hidden">
-                    <Image src="/photos/Photo.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/flower.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/yellow.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent2.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/multichair.png"alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-
-            </div>
-            <br />
-            <br />
-            <br />
-            <div className="grid grid-cols-2 ml-[24] md:flex md:gap-[20] md:ml-[80]">
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-
-                <div className="md:hidden">
-                    <Image src="/photos/Photo.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Photo.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">Rustic Vase Set</span>
-                    <br />
-                    <span className="font-satoshi">£155</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Parent2.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Parent2.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Silky Vase</span>
-                    <br />
-                    <span className="font-satoshi">£125</span>
-                </div>
-                <div className="md:hidden">
-                    <Image src="/photos/Chair.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Dandy chair</span>
-                    <br />
-                    <span className="font-satoshi">£250</span>
-                </div>
-                <div className="sm:hidden md:block">
-                    <Image src="/photos/Parent.png" alt="Photo" height={200} width={200} className="w-[163] h-[201] md:h-[375] md:w-[305]"></Image>
-                    <span className="text-xl font-clash">The Lucy Lamp</span>
-                    <br></br>
-                    <span className="font-satoshi">£399</span>
-                </div>
-
-
-            </div>
-            <button className="font-satoshi w-[342] h-[56] ml-[24] text-black bg-gray-100 mt-[32] md:w-[170] md:ml-[635]">View collection</button>
-            <br />
-            <br /><br />
-        </div>
-    )
-}
-export default ProductCom1
+        <br />
+         <div className="sm:grid sm:grid-cols-2 ml-[24] md:grid md:grid-cols-4 md:gap-[20] md:ml-[80]">
+         {products.map((product:Product) => (
+  <Link href={`/product/${product._id}`} key={product._id}>
+    <div className="product-card cursor-pointer">
+      <Image 
+        src={product.imageUrl} 
+        alt="img" 
+        height={400} 
+        width={400} 
+        className="w-[163] h-[201] md:h-[375] md:w-[305]" 
+      />
+      <h2 className="product-name text-xl font-clash">{product.name}</h2>
+      <p className="product-price font-satoshi">${product.price.toFixed(2)}</p>
+    </div>
+  </Link>
+))}
+    </div>
+    <button className="font-satoshi w-[342] h-[56] ml-[24] text-black bg-gray-100 mt-[32] md:w-[170] md:ml-[635]">View collection</button>
+      </div>
+      
+    
+  );
+};
+export default ProductCom1;

@@ -11,6 +11,8 @@ export default function product (){
             <BurgerMenu/>
             <Header/>
             <ProductCom1/>
+            <br />
+            <br />
             <Footer/>
             <Footer2/>
         </div>
