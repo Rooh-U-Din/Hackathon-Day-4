@@ -5,10 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [isManuOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [products, setProducts] = useState<any[]>([]);
-  const [filteredProducts, setFilterdProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilterdProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,10 +28,18 @@ const Header = () => {
     };
     fetchProducts();
   }, []);
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
     setSearchQuery(query);
-  };
+  
+  const filtered = products.filter((product) => 
+   
+      product.name.toLowerCase().includes(query)
+     )
+    setFilterdProducts(filtered);}
+ 
+  
 
   return (
     <div className=" w-[390] h-[69] md:block md:w-[1440] md:h-[132]">
@@ -45,7 +52,7 @@ const Header = () => {
         href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700&display=swap"
       />
       <div className="relative flex">
-      <div className="absolute max-w-lg p-4 rounded-lg ml-2">
+      <div className=" sm:hidden md:block absolute max-w-lg p-4 rounded-lg ml-2">
         <div className="flex items-center border-2 border-gray-300 rounded-md overflow-hidden">
           <input
             type="text"
@@ -66,7 +73,7 @@ const Header = () => {
         {searchQuery && filteredProducts.length > 0 && (
           <div className="absolute bg-white w-[265] border border-gray-200 z-10">
             <ul className="bg-gray-100 ">
-              {filteredProducts.map((product: any) => (
+              {filteredProducts.map((product: Product) => (
                 <li key={product._id} className="font-satoshi">
                   <Link href={`/product/${product._id}`} className=" text-black hover:text-blue-600">{product.name}</Link>
                 </li>

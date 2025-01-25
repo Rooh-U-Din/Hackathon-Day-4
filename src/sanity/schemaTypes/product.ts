@@ -43,6 +43,7 @@ export const product = defineType({
             title: "Quantity",
             type: "number",
             validation: (rule) => rule.min(0),
+            
           }),
         defineField({
             name: "tags",
