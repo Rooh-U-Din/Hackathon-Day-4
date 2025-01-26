@@ -77,22 +77,65 @@ const ProductCom1 = () => {
             className="absolute h-[16] w-[16] ml-[108.5] mt-[-18]"
           />
         </button>
-
       </div>
       <div className="sm:hidden md:block md:max-h-[64] md:w-[1440] ml-[24]">
-                <div className="flex font-satoshi gap-[12] mt-[8] text-[rgb(42,37,75)]">
-                    <div>Category <img src="/photos/downb.png" className=" h-[16] w-[16] ml-[88.5] mt-[-18]"></img></div>
-                    <div>Product type <img src="/photos/downb.png" className=" h-[16] w-[16] ml-[108.5] mt-[-18]"></img></div>
-                    <div>Price <img src="/photos/downb.png" className="h-[16] w-[16] ml-[68.5] mt-[-18]"></img></div>
-                    <div>Brand <img src="/photos/downb.png" className="h-[16] w-[16] ml-[88.5] mt-[-18]"></img></div>
-                </div>
-                <div className="flex gap-[16] md:ml-[679] xl:w-[237] xl:h-[48] xl:mt-[-26] xl:ml-[1179]  text-[rgb(42,37,75)]">
-                    <div className="font-satoshi">Sorting by:</div>
-                    <div className="font-satoshi">Date added <img src="/photos/downb.png" className="h-[16] w-[16] ml-[88.5] mt-[-18]"></img></div>
-                </div>
+        <div className="flex font-satoshi gap-[12] mt-[8] text-[rgb(42,37,75)]">
+          <div>
+            Category{" "}
+            <Image
+              src="/photos/downb.png"
+              alt="Dropdown icon"
+              height={100}
+              width={100}
+              className=" h-[16] w-[16] ml-[88.5] mt-[-18]"
+            />
+          </div>
+          <div>
+            Product type{" "}
+            <Image
+              src="/photos/downb.png"
+              alt="Dropdown icon"
+              height={100}
+              width={100}
+              className=" h-[16] w-[16] ml-[108.5] mt-[-18]"
+            />
+          </div>
+          <div>
+            Price{" "}
+            <Image
+              src="/photos/downb.png"
+              alt="Dropdown icon"
+              height={100}
+width={100}
+              className="h-[16] w-[16] ml-[68.5] mt-[-18]"
+            />
+          </div>
+          <div>
+            Brand{" "}
+            <Image
+              src="/photos/downb.png"
+              alt="Dropdown icon"
+              height={100}
+              width={100}
+              className="h-[16] w-[16] ml-[88.5] mt-[-18]"
+            />
+          </div>
+        </div>
+        <div className="flex gap-[16] md:ml-[679] xl:w-[237] xl:h-[48] xl:mt-[-26] xl:ml-[1179]  text-[rgb(42,37,75)]">
+          <div className="font-satoshi">Sorting by:</div>
+          <div className="font-satoshi">
+            Date added{" "}
+            <Image
+              src="/photos/downb.png"
+              alt="Dropdown icon"
+              height={100}
+              width={100}
+              className="h-[16] w-[16] ml-[88.5] mt-[-18]"
+            />
+          </div>
+        </div>
+      </div>
 
-            </div>
-            
       <div className="sm:grid sm:grid-cols-2 ml-[24] md:grid md:grid-cols-4 md:gap-[20] md:ml-[80]">
         {products.map((product: Product) => (
           <div key={product._id}>

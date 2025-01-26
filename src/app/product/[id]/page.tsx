@@ -1,9 +1,11 @@
+
 import React from "react";
 import { client } from "@/sanity/lib/client";
-import Link from "next/link";
 import Header from "@/app/component/header";
 import Footer from "@/app/component/footer-sm";
 import Footer2 from "@/app/component/footer-all";
+import Image from "next/image";
+import ProductActions from "@/app/component/ProductActions";
 
 const ProductCategory = async ({ params }: { params: { id: string } }) => {
   const query = `
@@ -24,16 +26,17 @@ const ProductCategory = async ({ params }: { params: { id: string } }) => {
     return <div>Product not found</div>;
   }
 
- 
+   
   return (
     <div className="">
       <Header />
       <div className="product-card cursor-pointer flex flex-col md:flex-row gap-5 sm:max-w-[390] sm:ml-0 md:max-w-[950] mt-[50]">
-        <img
+        <Image
           src={product.imageUrl}
           alt={product.name}
-          className="h-[500] w-[550]"
-        ></img>
+          height={500}
+          width={550}
+        ></Image>
 
         <div className="mt-8">
           <h2 className="product-name font-bold text-xl font-clash">
@@ -54,11 +57,7 @@ const ProductCategory = async ({ params }: { params: { id: string } }) => {
         
           <br />
           <br />
-          <button
-            className="bg-blue-700 h-8 w-[270px] rounded text-white hover:bg-blue-800 flex items-center justify-center font-satoshi"
-          >
-            <Link href="/shopping">Go to cart</Link>
-          </button>
+          <ProductActions product={product} />
         </div>
       </div>
       <br />
