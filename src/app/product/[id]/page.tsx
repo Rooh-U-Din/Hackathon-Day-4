@@ -7,7 +7,13 @@ import Footer2 from "@/app/component/footer-all";
 import Image from "next/image";
 import ProductActions from "@/app/component/ProductActions";
 
-const ProductCategory = async ({ params }: { params: { id: string } }) => {
+interface ProductCategoryProps {
+  params: {
+    id: string;
+  };
+}
+
+const ProductCategory = async ({ params }: ProductCategoryProps )=> {
   const query = `
     *[_type=="product" && _id == "${params.id}"][0]{
         _id,
