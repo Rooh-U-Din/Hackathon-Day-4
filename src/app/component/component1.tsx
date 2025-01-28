@@ -6,7 +6,7 @@ const Component1 = () => {
         <div className=" bg-[rgb(42,37,75)] h-[502] w-[390] relative flex flex-col justify-start md:w-[1280] md:h-[584] md:ml-[80] md:mt-[90]">
             <div className="absolute w-[342] h-[135] mt-[40px] ml-[24] md:ml-[60] md:mt-[60] md:w-[513] md:h-[187]">
                 <h2 className="text-white font-clash text-4xl ">The furniture brand for the future, with timeless designs</h2>
-                <Link href="/product" passHref><button className="w-[170] h-[56] text-white bg-[rgb(78,77,147)] mt-[32] sm:hidden md:block">View Collection</button>
+                <Link href="/product" passHref><button className="w-[170] h-[56] hover:bg-[rgb(59,52,104)] text-white bg-[rgb(78,77,147)] mt-[32] sm:hidden md:block">View Collection</button>
     </Link>
     
             </div>

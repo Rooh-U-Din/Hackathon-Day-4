@@ -82,7 +82,7 @@ const [cartItems, setCartItems] = useState<Product[]>([]);
                 <p className="font-satoshi text-sm text-[rgba(78,77,147,1)]">Taxes and shipping are calculated at checkout</p>
 <br />
             </div>
-            <button className="font-satoshi bg-[rgb(42,37,75)] w-[342] h-[56]  ml-[24] text-white md:ml-[900] xl:ml-[1190] md:h-[56] md:w-[172]">Go to checkout</button>
+            <button className="font-satoshi hover:bg-[rgb(65,57,116)] bg-[rgb(42,37,75)] w-[342] h-[56]  ml-[24] text-white md:ml-[900] xl:ml-[1190] md:h-[56] md:w-[172]">Go to checkout</button>
        
        <br /><br />
     </div>

@@ -139,7 +139,7 @@ width={100}
       <div className="sm:grid sm:grid-cols-2 ml-[24] md:grid md:grid-cols-4 md:gap-[20] md:ml-[80]">
         {products.map((product: Product) => (
           <div key={product._id}>
-            <Link href={`/product/${product._id}`} passHref>
+            <Link href={`/product/${product._id}`}>
               <div className="product-card cursor-pointer">
                 <Image
                   src={product.imageUrl}

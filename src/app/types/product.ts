@@ -6,5 +6,5 @@ type Product={
   price:number;
   description:string;
   quantity:number;
-  category:string
+  category:string;
 }

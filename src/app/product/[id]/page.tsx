@@ -7,15 +7,13 @@ import Footer2 from "@/app/component/footer-all";
 import Image from "next/image";
 import ProductActions from "@/app/component/ProductActions";
 
-interface ProductCategoryProps {
-  params: {
-    id: string;
-  };
+interface ProductProps {
+  params: Promise<{id:string}>;
 }
 
-const ProductCategory = async ({ params }: ProductCategoryProps )=> {
-  const query = `
-    *[_type=="product" && _id == "${params.id}"][0]{
+async function getProduct(id:string): Promise<Product | null> {
+  return client.fetch( `
+    *[_type=="product" && _id == "${id}"][0]{
         _id,
         name,
         description,
@@ -23,9 +21,15 @@ const ProductCategory = async ({ params }: ProductCategoryProps )=> {
         price,
         "imageUrl": image.asset->url,
     }
-`;
+`, {id}
+)
+}
 
-  const product: Product = await client.fetch(query);
+const ProductCategory = async ({params}:ProductProps) => {
+  const {id} = await params
+
+  const product = await getProduct(id)
+ 
 
 
   if (!product) {
