@@ -10,7 +10,7 @@ import Header from "./component/header"
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-[390] md:max-w-[1440]">
       <Header />  
       <Component1 />
       <Component2 />

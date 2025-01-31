@@ -41,31 +41,36 @@ const ProductCategory = async ({params}:ProductProps) => {
     <div className="">
       <Header />
       <div className="product-card cursor-pointer flex flex-col md:flex-row gap-5 max-w-[390px] ml-0 md:max-w-[950px] mt-[50px]">
+  {/* Product Image */}
   <Image
     src={product.imageUrl}
     alt={product.name}
     height={500}
     width={550}
-    className="rounded-md hover:opacity-95 md:w-[500px] md:h-[500px] w-[390px] h-[390px]"
+    className="rounded-md hover:opacity-95 w-[390px] h-[390px] md:w-[500px] md:h-[500px]"
   />
 
+  {/* Product Details */}
   <div className="mt-8">
+    {/* Product Name */}
     <h2 className="product-name font-bold text-xl font-clash">
       {product.name}
     </h2>
     <br />
-    <br />
+
+    {/* Product Description */}
     <p className="text-xl font-satoshi text-gray-700">
       {product.description}
     </p>
     <br />
-    <br />
+
+    {/* Product Price */}
     <p className="product-price font-semibold font-satoshi">
       ${product.price.toFixed(2)}
     </p>
     <br />
-    <br />
-    <br />
+
+    {/* Product Actions (e.g., Add to Cart, View Details) */}
     <ProductActions product={product} />
   </div>
 </div>

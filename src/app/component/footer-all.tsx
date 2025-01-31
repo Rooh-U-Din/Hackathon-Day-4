@@ -108,7 +108,7 @@ const Footer2 = () => {
           className="w-[24px] h-[24px]"
         />
       <Link href="/FAQs" passHref>
-    <button className="absolute font-satoshi z-10 w-[152px] h-[36px] ml-[-157] text-black bg-gray-100 mt-[-250px] hover:text-blue-700">
+    <button className="absolute font-satoshi z-10 w-[152px] h-[36px] right-0 text-black bg-gray-100 mt-[-50px] hover:text-blue-700">
       FAQs
     </button>
   </Link>

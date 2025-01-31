@@ -58,7 +58,7 @@ const Header = () => {
   />
 
   <div className="flex z-10 mt-[26px] h-[16px] gap-[10px] absolute ml-[208px] md:block">
-    <div className="flex w-[120px] items-center border-2 border-gray-300 rounded overflow-hidden md:hidden">
+    <div className="flex w-[120px] items-center border-2 border-gray-50 rounded overflow-hidden md:hidden">
       <input
         type="text"
         placeholder="Search Here"
@@ -70,20 +70,23 @@ const Header = () => {
     </div>
 
     {searchQuery && filteredProducts.length > 0 && (
-      <div className="absolute bg-white w-[265px] border border-gray-200 z-10">
-        <ul className="bg-gray-100">
-          {filteredProducts.map((product: Product) => (
-            <li key={product._id} className="font-satoshi">
-              <Link
-                href={`/product/${product._id}`}
-                className="text-black hover:text-blue-600"
-              >
-                {product.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="absolute md:hidden bg-white w-[180px] left-0 top-4 border border-gray-200 rounded-lg shadow-lg z-10">
+      <ul className="bg-white">
+        {filteredProducts.map((product: Product) => (
+          <li
+            key={product._id}
+            className="font-satoshi p-3 hover:bg-gray-100 transition-colors duration-200"
+          >
+            <Link
+              href={`/product/${product._id}`}
+              className="text-gray-800 hover:text-blue-600 block"
+            >
+              {product.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
     )}
 
     <button onClick={toggleMenu} className="z-20 md:hidden">
@@ -127,51 +130,55 @@ const Header = () => {
   </div>
 
   <div className="relative flex">
-    <div className="hidden md:block absolute max-w-lg p-4 rounded-lg ml-2">
-      <div className="flex items-center border-2 border-gray-300 rounded-md overflow-hidden">
-        <input
-          type="text"
-          placeholder="Search Here"
-          value={searchQuery}
-          onChange={handleSearch}
-          className="py-2 px-4 text-sm placeholder-gray-500 focus:outline-none"
-        />
-        <CgSearch className="hidden md:block md:h-6 md:w-6 md:ml-4 md:mr-4" />
+  {/* Search Bar (Visible on Desktop) */}
+  <div className="hidden md:block absolute max-w-lg p-4 rounded-lg ml-2">
+    <div className="flex items-center border-2 border-gray-300 rounded-md overflow-hidden">
+      <input
+        type="text"
+        placeholder="Search Here"
+        value={searchQuery}
+        onChange={handleSearch}
+        className="py-2 px-4 text-sm placeholder-gray-500 focus:outline-none flex-grow"
+      />
+      <CgSearch className="h-6 w-6 ml-4 mr-4 text-gray-500" />
+    </div>
+
+    {/* Search Results Dropdown */}
+    {searchQuery && filteredProducts.length > 0 && (
+      <div className="absolute hidden md:block bg-white w-[265px] border border-gray-200 z-10 mt-2 rounded-lg shadow-lg">
+        <ul>
+          {filteredProducts.map((product: Product) => (
+            <li key={product._id} className="font-satoshi p-2 hover:bg-gray-100">
+              <Link
+                href={`/product/${product._id}`}
+                className="text-black hover:text-blue-600 block"
+              >
+                {product.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      {searchQuery && filteredProducts.length > 0 && (
-        <div className="absolute bg-white w-[265px] border border-gray-200 z-10">
-          <ul className="bg-gray-100">
-            {filteredProducts.map((product: Product) => (
-              <li key={product._id} className="font-satoshi">
-                <Link
-                  href={`/product/${product._id}`}
-                  className="text-black hover:text-blue-600"
-                >
-                  {product.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-
-    <Link href="/" passHref>
-      <h1 className="h-[30px] w-[65px] mt-5 ml-6 font-clash text-2xl md:ml-[687px] md:mt-[20px] cursor-pointer">
-        Avion
-      </h1>
-    </Link>
-
-    <div className="flex mt-[26px] ml-auto h-[16px] gap-[20px] md:absolute xl:ml-[1364px] md:ml-[1200px]">
-      <Link href="./shopping" passHref>
-        <CgShoppingCart className="hidden md:block md:h-[16px] md:w-[16px]" />
-      </Link>
-      <Link href="./about" passHref>
-        <CgProfile className="hidden md:block md:h-[16px] md:w-[16px]" />
-      </Link>
-    </div>
+    )}
   </div>
+
+  {/* Logo */}
+  <Link href="/" passHref>
+    <h1 className="h-[30px] w-[65px] mt-5 ml-6 font-clash text-2xl md:ml-[687px] md:mt-[20px] cursor-pointer">
+      Avion
+    </h1>
+  </Link>
+
+  {/* Icons (Visible on Desktop) */}
+  <div className="flex mt-[26px] ml-auto h-[16px] gap-[20px] md:absolute xl:ml-[1364px] md:ml-[1200px]">
+    <Link href="/shopping" passHref>
+      <CgShoppingCart className="hidden md:block md:h-[16px] md:w-[16px] cursor-pointer" />
+    </Link>
+    <Link href="/about" passHref>
+      <CgProfile className="hidden md:block md:h-[16px] md:w-[16px] cursor-pointer" />
+    </Link>
+  </div>
+</div>
 
   <Image
     src="/photos/Divider.png"
