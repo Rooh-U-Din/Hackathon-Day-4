@@ -54,110 +54,113 @@ const router = useRouter();
   };
 
   return (
-    <div className="w-[390] md:w-[1170] lg:w-[1280] bg-[rgba(249,249,249,1)] xl:w-[1440] md:mt-[132] ">
-      <div className="absolute md:w-[1170] lg:w-[1280] xl:w-[1440]">
-        <h1 className="text-2xl ml-6 mt-9 md:ml-[188] font-clash">
-          Your shopping cart
-        </h1>
-        <div className="flex">
-          <span className=" hidden md:block xl:ml-[188] md:ml-[188] font-satoshi">
-            Product
-          </span>
-          <span className=" hidden md:block xl:ml-[650] md:ml-[400] font-satoshi ">
-            Quantity
-          </span>
-          <span className=" hidden md:block xl:ml-[374] md:ml-[400] font-satoshi ">
-            Price
-          </span>
-        </div>
-        <Image
-          src="/photos/Divider.png"
-          alt="div"
-          height={100}
-          width={100}
-          className="  hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970]"
-        ></Image>
-      </div>
-      {cartItems.map((product: Product) => (
-        <div className=" flex gap-[22]" key={product._id}>
-          <Image
-            src={product.imageUrl}
-            alt={product.name}
-            height={200}
-            width={200}
-            className="ml-[24] mt-[110] h-[166] w-[133] md:ml-[188]"
-          />
-          <div className="w-[179] h-[166]">
-            <h2 className="text-lg mt-[110] font-clash ">{product.name}</h2>
-            <p className="mt-[15]  w-150  md:w-[300]  text-sm font-satoshi">
-              {product.description}
-            </p>
-            <div>
-              <div>
-                <span className="md:absolute mt-[0] md:block font-satoshi font-semibold md:ml-[980] md:mt-[0] ">
-                  £{product.price}
-                </span>
-              </div>
-              <div className="flex mt-[16] gap-[20] ml-[20] xl:ml-[550] md:mt-[-95] md:ml-[300] w-[200]">
-                <button
-                  className="text-gray-200 bg-gray-400 hover:bg-gray-600 w-[25] z-50"
-                  onClick={() => decrement(product._id)}
-                >
-                  -
-                </button>
-                <span className="font-satoshi max-w-[8] min-w-[8]">
-                  {product.quantity}
-                </span>
-                <button
-                  className="text-gray-200 bg-gray-400 hover:bg-gray-600 w-[25] z-50"
-                  onClick={() => increment(product._id)}
-                >
-                  +
-                </button>
-              </div>
-            </div>
+    <div className="w-[390px] md:w-[1170px] lg:w-[1280px] bg-[rgba(249,249,249,1)] xl:w-[1440px] md:mt-[132px]">
+  <div className="absolute md:w-[1170px] lg:w-[1280px] xl:w-[1440px]">
+    <h1 className="text-2xl ml-[24px] mt-[36px] md:ml-[188px] font-clash">
+      Your shopping cart
+    </h1>
+    <div className="flex">
+      <span className="hidden md:block xl:ml-[188px] md:ml-[188px] font-satoshi">
+        Product
+      </span>
+      <span className="hidden md:block xl:ml-[650px] md:ml-[400px] font-satoshi">
+        Quantity
+      </span>
+      <span className="hidden md:block xl:ml-[374px] md:ml-[400px] font-satoshi">
+        Price
+      </span>
+    </div>
+    <Image
+      src="/photos/Divider.png"
+      alt="div"
+      height={100}
+      width={100}
+      className="hidden md:block h-px xl:w-[1172px] ml-[188px] md:w-[970px]"
+    />
+  </div>
+
+  {cartItems.map((product: Product) => (
+    <div className="flex gap-[22px]" key={product._id}>
+      <Image
+        src={product.imageUrl}
+        alt={product.name}
+        height={200}
+        width={200}
+        className="ml-[24px] mt-[110px] h-[166px] w-[133px] md:ml-[188px]"
+      />
+      <div className="w-[179px] h-[166px]">
+        <h2 className="text-lg mt-[110px] font-clash">{product.name}</h2>
+        <p className="mt-[15px] w-[150px] md:w-[300px] text-sm font-satoshi line-clamp-6">
+          {product.description}
+        </p>
+        <div>
+          <div>
+            <span className="md:absolute mt-[0] md:block font-satoshi font-semibold md:ml-[980px] md:mt-[0]">
+              £{product.price}
+            </span>
+          </div>
+          <div className="flex mt-[16px] gap-[20px] ml-[20px] xl:ml-[550px] md:mt-[-95px] md:ml-[300px] w-[200px]">
             <button
-              className=" ml-[-120]  absolute  mt-[-70]  md:ml-[0] bg-red-700 hover:bg-red-600 hover:scale-110 duration-200 w-[100] md:mt-[80] text-white py-2 rounded"
-              onClick={() => handleRemove(product._id)}
+              className="text-gray-200 bg-gray-400 hover:bg-gray-600 w-[25px] z-50"
+              onClick={() => decrement(product._id)}
             >
-              Remove
+              -
+            </button>
+            <span className="font-satoshi max-w-[8px] min-w-[8px]">
+              {product.quantity}
+            </span>
+            <button
+              className="text-gray-200 bg-gray-400 hover:bg-gray-600 w-[25px] z-50"
+              onClick={() => increment(product._id)}
+            >
+              +
             </button>
           </div>
         </div>
-      ))}
-      <br />
-      <Image
-        src="/photos/Divider.png"
-        alt="div"
-        height={100}
-        width={100}
-        className="  hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970] mt-[100]"
-      ></Image>
-
-      <div className="ml-[84] mt-[100] md:ml-[800] xl:ml-[1073]">
-        <div className="flex ">
-          <p className="font-clash ml-[132] text-lg text-[rgba(78,77,147,1)]">
-            Subtotal
-          </p>
-          <span className="font-clash text-lg ml-[45]">
-            Total: £{total().toFixed(2)}
-          </span>
-        </div>
-        <p className="font-satoshi text-sm text-[rgba(78,77,147,1)]">
-          Taxes and shipping are calculated at checkout
-        </p>
-        <br />
+        <button
+          className="ml-[-120px] absolute mt-[-40px] md:ml-[0] bg-red-700 hover:bg-red-600 hover:scale-110 duration-200 w-[100px] md:mt-[80px] text-white py-2 rounded"
+          onClick={() => handleRemove(product._id)}
+        >
+          Remove
+        </button>
       </div>
-      <button
-        className="font-satoshi hover:bg-[rgb(65,57,116)] bg-[rgb(42,37,75)] w-[342] h-[56]  ml-[24] text-white md:ml-[900] xl:ml-[1190] md:h-[56] md:w-[172]"
-        onClick={handleCheckout}
-      >
-        Go to checkout
-      </button>
-
-      <br />
-      <br />
     </div>
+  ))}
+
+  <br />
+  <Image
+    src="/photos/Divider.png"
+    alt="div"
+    height={100}
+    width={100}
+    className="hidden md:block h-px xl:w-[1172px] ml-[188px] md:w-[970px] mt-[100px]"
+  />
+
+  <div className="ml-[84px] mt-[100px] md:ml-[800px] xl:ml-[1073px]">
+    <div className="flex">
+      <p className="font-clash ml-[132px] text-lg text-[rgba(78,77,147,1)]">
+        Subtotal
+      </p>
+      <span className="font-clash text-lg ml-[45px]">
+        Total: £{total().toFixed(2)}
+      </span>
+    </div>
+    <p className="font-satoshi text-sm text-[rgba(78,77,147,1)]">
+      Taxes and shipping are calculated at checkout
+    </p>
+    <br />
+  </div>
+
+  <button
+    className="font-satoshi hover:bg-[rgb(65,57,116)] bg-[rgb(42,37,75)] w-[342px] h-[56px] ml-[24px] text-white md:ml-[900px] xl:ml-[1190px] md:h-[56px] md:w-[172px]"
+    onClick={handleCheckout}
+  >
+    Go to checkout
+  </button>
+
+  <br />
+  <br />
+</div>
   );
 };
 export default Cart;

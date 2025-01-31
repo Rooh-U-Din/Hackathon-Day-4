@@ -79,6 +79,7 @@ const ProductCom1 = () => {
           />
         </button>
       </div>
+      <br />
       <div className=" hidden md:block md:max-h-[64px] md:w-[1440px] ml-[24px]">
         <div className="flex font-satoshi gap-[12px] mt-[8px] text-[rgb(42,37,75)]">
           <div>
