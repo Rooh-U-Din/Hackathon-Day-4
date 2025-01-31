@@ -3,13 +3,12 @@ import Link from "next/link";
 
 const Component3 = () => {
   return (
-    <div className="max-h-[811px] max-w-[390px] mt-[450px] md:mt-[100px] md:max-w-[1440px] md:max-h-[761px] mx-auto">
-      <h4 className="w-[136px] h-[25px] mt-[48px] ml-[26px] font-clash text-xl md:ml-[80px]">
+    <div className="max-h-[811px] max-w-[390px] mt-[450px] md:mt-[100px] md:max-w-[1440px] md:max-h-[761px]">
+      <h4 className="w-[136px] h-[25px] mt-48 ml-[26px] font-clash text-xl md:ml-[80px]">
         New ceramics
       </h4>
       <br />
-      <div className="grid grid-cols-2 gap-[20px] ml-[24px] md:flex md:gap-[20px] md:ml-[80px]">
-        {/* Item 1 */}
+      <div className="grid grid-cols-2 ml-[24px] md:flex md:gap-[20px] md:ml-[80px]">
         <div className="sm:hidden md:block">
           <Link href="/product" passHref>
             <Image
@@ -25,7 +24,6 @@ const Component3 = () => {
           <span className="font-satoshi">£250</span>
         </div>
 
-        {/* Item 2 */}
         <div className="md:hidden">
           <Link href="/product" passHref>
             <Image
@@ -41,7 +39,6 @@ const Component3 = () => {
           <span className="font-satoshi">£155</span>
         </div>
 
-        {/* Item 3 */}
         <div className="sm:hidden md:block">
           <Link href="/product" passHref>
             <Image
@@ -57,7 +54,6 @@ const Component3 = () => {
           <span className="font-satoshi">£155</span>
         </div>
 
-        {/* Item 4 */}
         <div className="md:hidden">
           <Link href="/product" passHref>
             <Image
@@ -73,7 +69,6 @@ const Component3 = () => {
           <span className="font-satoshi">£399</span>
         </div>
 
-        {/* Item 5 */}
         <div className="sm:hidden md:block">
           <Link href="/product" passHref>
             <Image
@@ -89,7 +84,6 @@ const Component3 = () => {
           <span className="font-satoshi">£125</span>
         </div>
 
-        {/* Item 6 */}
         <div className="md:hidden">
           <Link href="/product" passHref>
             <Image
@@ -105,7 +99,6 @@ const Component3 = () => {
           <span className="font-satoshi">£125</span>
         </div>
 
-        {/* Item 7 */}
         <div className="md:hidden">
           <Link href="/product" passHref>
             <Image
@@ -121,7 +114,6 @@ const Component3 = () => {
           <span className="font-satoshi">£250</span>
         </div>
 
-        {/* Item 8 */}
         <div className="sm:hidden md:block">
           <Link href="/product" passHref>
             <Image

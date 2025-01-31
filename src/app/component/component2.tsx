@@ -15,12 +15,13 @@ const Component2 = () => {
             width={20}
             className="h-[16px] w-[16px] ml-[24px] md:ml-0"
           />
-          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">Next day as standard</p>
+          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">
+            Next day as standard
+          </p>
           <p className="ml-[24px] mt-[34px] font-satoshi md:ml-0">
             Order before 3pm and get your order the next day as standard
           </p>
         </div>
-
         <div className="mt-[92px]">
           <Image
             src="/photos/Checkmark--outline.png"
@@ -29,12 +30,13 @@ const Component2 = () => {
             width={20}
             className="h-[16px] w-[16px] ml-[24px] md:ml-0"
           />
-          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">Made by true artisans</p>
+          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">
+            Made by true artisans
+          </p>
           <p className="ml-[24px] mt-[34px] font-satoshi md:ml-0">
             Handmade crafted goods made with real passion and craftsmanship
           </p>
         </div>
-
         <div className="mt-[92px]">
           <Image
             src="/photos/Purchase.png"
@@ -43,12 +45,13 @@ const Component2 = () => {
             width={20}
             className="h-[16px] w-[16px] ml-[24px] md:ml-0"
           />
-          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">Unbeatable prices</p>
+          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">
+            Unbeatable prices
+          </p>
           <p className="ml-[24px] mt-[34px] font-satoshi md:ml-0">
-            For our materials and quality, you won’t find better prices anywhere
+            For our materials and quality you won’t find better prices anywhere
           </p>
         </div>
-
         <div className="mt-[92px]">
           <Image
             src="/photos/Sprout.png"
@@ -57,7 +60,9 @@ const Component2 = () => {
             width={20}
             className="h-[16px] w-[16px] ml-[24px] md:ml-0"
           />
-          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">Recycled packaging</p>
+          <p className="ml-[24px] mt-[40px] text-xl font-clash md:ml-0">
+            Recycled packaging
+          </p>
           <p className="ml-[24px] mt-[34px] font-satoshi md:ml-0">
             We use 100% recycled packaging to ensure our footprint is manageable
           </p>
