@@ -15,7 +15,7 @@ const AboutCom5 = () => {
             </div>
 
 
-            <div className=" sm:hidden md:block absolute md:mt-[20]  md:w-[1280] md:h-[381] md:bg-gray-200 xl:mt-[20]  xl:w-[1440] xl:h-[481] xl:bg-gray-200">
+            <div className="  hidden md:block absolute md:mt-[20]  md:w-[1280] md:h-[381] md:bg-gray-200 xl:mt-[20]  xl:w-[1440] xl:h-[481] xl:bg-gray-200">
                 <div className=" md:w-[1080] md:h-[304] md:bg-white md:ml-[73] md:mt-[42] xl:w-[1273] xl:h-[364] xl:bg-white xl:ml-[93] xl:mt-[52]">
                     <div className="md:mt-[68] md:ml-[351] md:w-[571] md:h-[114]">
                         <h2 className=" md:text-4xl font-clash">Join the club and get the benefits</h2>

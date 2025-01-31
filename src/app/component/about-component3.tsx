@@ -7,7 +7,7 @@ const AboutCom3 = ()=>{
             <div className="w-[342] h-[264] mt-[48] ml-[24] md:ml-[804] md:mt-[-500] md:w-[536]">
                 <h2 className="font-clash  text-xl">Our service isn’t just <br className="md:hidden"/> personal,it’s actually <br/>
                 hyper personally exquisite</h2>
-                <br className="sm:hideen md:block"/>
+                <br className=" hideen md:block"/>
                 <p className="font-satoshi text-sm">When we started Avion, the idea was simple.
                      Make high quality furniture affordable and available for the mass market. <br /><br /><br />
                       Handmade, and lovingly crafted furniture and homeware is what we live, 

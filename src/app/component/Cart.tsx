@@ -60,13 +60,13 @@ const router = useRouter();
           Your shopping cart
         </h1>
         <div className="flex">
-          <span className="sm:hidden md:block xl:ml-[188] md:ml-[188] font-satoshi">
+          <span className=" hidden md:block xl:ml-[188] md:ml-[188] font-satoshi">
             Product
           </span>
-          <span className="sm:hidden md:block xl:ml-[650] md:ml-[400] font-satoshi ">
+          <span className=" hidden md:block xl:ml-[650] md:ml-[400] font-satoshi ">
             Quantity
           </span>
-          <span className="sm:hidden md:block xl:ml-[374] md:ml-[400] font-satoshi ">
+          <span className=" hidden md:block xl:ml-[374] md:ml-[400] font-satoshi ">
             Price
           </span>
         </div>
@@ -75,7 +75,7 @@ const router = useRouter();
           alt="div"
           height={100}
           width={100}
-          className=" sm:hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970]"
+          className="  hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970]"
         ></Image>
       </div>
       {cartItems.map((product: Product) => (
@@ -89,7 +89,7 @@ const router = useRouter();
           />
           <div className="w-[179] h-[166]">
             <h2 className="text-lg mt-[110] font-clash ">{product.name}</h2>
-            <p className="mt-[15] sm:w-150  md:w-[300]  text-sm font-satoshi">
+            <p className="mt-[15]  w-150  md:w-[300]  text-sm font-satoshi">
               {product.description}
             </p>
             <div>
@@ -117,7 +117,7 @@ const router = useRouter();
               </div>
             </div>
             <button
-              className="sm:ml-[-120] sm:absolute sm:mt-[-70]  md:ml-[0] bg-red-700 hover:bg-red-600 hover:scale-110 duration-200 w-[100] md:mt-[80] text-white py-2 rounded"
+              className=" ml-[-120]  absolute  mt-[-70]  md:ml-[0] bg-red-700 hover:bg-red-600 hover:scale-110 duration-200 w-[100] md:mt-[80] text-white py-2 rounded"
               onClick={() => handleRemove(product._id)}
             >
               Remove
@@ -131,7 +131,7 @@ const router = useRouter();
         alt="div"
         height={100}
         width={100}
-        className=" sm:hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970] mt-[100]"
+        className="  hidden md:block h-px xl:w-[1172] ml-[188] md:w-[970] mt-[100]"
       ></Image>
 
       <div className="ml-[84] mt-[100] md:ml-[800] xl:ml-[1073]">

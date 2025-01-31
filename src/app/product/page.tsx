@@ -1,4 +1,4 @@
-import BurgerMenu from "../component/burger-menu";
+
 import Footer2 from "../component/footer-all";
 import Footer from "../component/footer-sm";
 import Header from "../component/header";
@@ -8,7 +8,6 @@ export default function product (){
     return (
 
         <div>
-            <BurgerMenu/>
             <Header/>
             <ProductCom1/>
             <br />

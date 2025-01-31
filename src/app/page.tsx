@@ -1,5 +1,3 @@
-
-import BurgerMenu from "./component/burger-menu"
 import Component1 from "./component/component1"
 import Component2 from "./component/component2"
 import Component3 from "./component/component3"
@@ -13,7 +11,6 @@ import Header from "./component/header"
 export default function Home() {
   return (
     <div>
-      <BurgerMenu />
       <Header />  
       <Component1 />
       <Component2 />

@@ -54,7 +54,7 @@ const ProductCom1 = () => {
           alt=""
           height={400}
           width={400}
-          className="sm:hidden md:block md:h-[209px] md:w-[1440px] mt-[69px]"
+          className=" hidden md:block md:h-[209px] md:w-[1440px] mt-[69px]"
         />
       </div>
       <div className="flex mt-[94px] ml-[24px] gap-[20px] md:hidden">
@@ -79,7 +79,7 @@ const ProductCom1 = () => {
           />
         </button>
       </div>
-      <div className="sm:hidden md:block md:max-h-[64px] md:w-[1440px] ml-[24px]">
+      <div className=" hidden md:block md:max-h-[64px] md:w-[1440px] ml-[24px]">
         <div className="flex font-satoshi gap-[12px] mt-[8px] text-[rgb(42,37,75)]">
           <div>
             Category{" "}
@@ -107,7 +107,7 @@ const ProductCom1 = () => {
         </div>
       </div>
 
-      <div className="sm:grid sm:grid-cols-2 ml-[24px] md:grid md:grid-cols-4 md:gap-[20px] md:ml-[80px]">
+      <div className=" grid  grid-cols-2 ml-[24px] md:grid md:grid-cols-4 md:gap-[20px] md:ml-[80px]">
         {products.map((product: Product) => (
           <div
             key={product._id}
@@ -130,16 +130,16 @@ const ProductCom1 = () => {
                 </p>
               </div>
             </Link>
-            <div className="sm:grid sm:grid-cols-1 sm:gap-2 md:flex md:justify-between md:items-center bg-gray-50 max-w-[325px] mt-2 p-2 rounded-sm">
+            <div className=" grid  grid-cols-1  gap-2 md:flex md:justify-between md:items-center bg-gray-50 max-w-[325px] mt-2 p-2 rounded-sm">
               <button
-                className="sm:w-[100px] bg-blue-700 h-8 w-[310px] rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi cursor-pointer"
+                className=" w-[100px] bg-blue-700 h-8 rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi cursor-pointer"
                 onClick={(e) => handleAddToCart(e, product)}
               >
                 Add to cart
               </button>
 
               <Link href="/shopping" passHref>
-                <button className="sm:w-[100px] bg-blue-700 h-8 w-[310px] rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi">
+                <button className=" w-[100px] bg-blue-700 h-8 rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi">
                   Go to cart
                 </button>
               </Link>

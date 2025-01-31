@@ -102,29 +102,29 @@ function CheckOut() {
   return (
     <div>
     <Header />
-    <div className="flex">
+    <div className="md:flex">
       <div className="w-[390px] md:max-w-[900px] lg:w-[1280px] bg-[rgba(249,249,249,1)] md:mt-[132px] mx-auto p-4 ml-1">
         {/* Navbar */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <nav className="flex items-center gap-2 py-4">
             <Link
               href="/shopping"
-              className="text-gray-600 hover:text-black transition text-sm"
+              className="text-gray-600 hover:text-black font-satoshi transition text-sm"
             >
               Cart
             </Link>
-            <CgChevronRight className="w-4 h-4 text-black" />
+            <CgChevronRight className="w-4 h-4 font-satoshi text-black" />
             <span>CheckOut</span>
           </nav>
         </div>
 
         {/* Order Summary */}
         <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
-          <h1 className="text-2xl font-bold">Order Summary</h1>
+          <h1 className="text-2xl font-semibold font-clash">Order Summary</h1>
           <div className="flex justify-between py-2 border-b">
-            <span className="hidden md:block font-semibold">Product</span>
-            <span className="hidden md:block font-semibold">Quantity</span>
-            <span className="hidden md:block font-semibold">Price</span>
+            <span className=" md:block font-satoshi font-semibold">Product</span>
+            <span className=" md:block font-satoshi font-semibold">Quantity</span>
+            <span className=" md:block font-satoshi font-semibold">Price</span>
           </div>
           {cartItems.length > 0 ? (
             cartItems.map((product) => (
@@ -142,10 +142,10 @@ function CheckOut() {
                       className="w-16 h-16 object-cover rounded-lg border"
                     />
                   )}
-                  <h3 className="text-lg font-semibold">{product.name}</h3>
+                  <h3 className="text-lg w-[55] font-clash">{product.name}</h3>
                 </div>
-                <p className="text-gray-500">{product.quantity}</p>
-                <p className="text-lg font-semibold">
+                <p className="text-gray-500 font-satoshi">{product.quantity}</p>
+                <p className="text-lg font-clash">
                   £{(product.price * product.quantity).toFixed(2)}
                 </p>
               </div>
@@ -156,13 +156,13 @@ function CheckOut() {
             </div>
           )}
           <div className="py-4">
-            <p className="font-semibold text-lg flex justify-between">
+            <p className="font-semibold text-lg font-satoshi flex justify-between">
               Subtotal: <span>£{subTotal.toFixed(2)}</span>
             </p>
-            <p className="font-semibold text-lg flex justify-between">
+            <p className="font-semibold font-satoshi text-lg flex justify-between">
               Discount: <span>£{discount.toFixed(2)}</span>
             </p>
-            <p className="font-bold text-xl flex justify-between">
+            <p className="font-semibold text-xl font-clash flex justify-between">
               Total: <span>£{(subTotal - discount).toFixed(2)}</span>
             </p>
           </div>
@@ -170,11 +170,12 @@ function CheckOut() {
 
           {/* Checkout Form */}
         </div>
-        <div className="w-[390px] h-[400] md:max-w-[900px] lg:w-[1280px] bg-[rgba(249,249,249,1)] md:mt-[132px] mx-auto p-4 ml-1">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Billing</h2>
+        
+        <div className="w-[390px] h-auto md:max-w-[900px] lg:w-[1280px] bg-[rgba(249,249,249,1)] md:mt-[132px] mx-auto p-4 ml-1">
+          <h2 className="text-2xl  text-gray-800 mb-4 font-clash">Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">First Name</label>
+              <label className="text-gray-700 font-medium font-satoshi">First Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -182,15 +183,15 @@ function CheckOut() {
                 placeholder="Enter your first name"
                 value={formValues.firstName}
                 onChange={handleInput}
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className=" font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
                 required
               />
               {formErrors.firstName && (
-                <span className="text-red-500">First name is required</span>
+                <span className="text-red-500 font-satoshi">First name is required</span>
               )}
             </div>
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">Last Name</label>
+              <label className="text-gray-700 font-medium font-satoshi">Last Name</label>
               <input
                 type="text"
                 name="lastName"
@@ -199,14 +200,14 @@ function CheckOut() {
                 value={formValues.lastName}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.lastName && (
-                <span className="text-red-500">Last name is required</span>
+                <span className="text-red-500 font-satoshi">Last name is required</span>
               )}
             </div>
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">Email</label>
+              <label className="text-gray-700 font-medium font-satoshi">Email</label>
               <input
                 type="email"
                 name="email"
@@ -215,15 +216,15 @@ function CheckOut() {
                 value={formValues.email}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.email && (
-                <span className="text-red-500">Email is required</span>
+                <span className="text-red-500 font-satoshi">Email is required</span>
               )}
             </div>
 
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">Address</label>
+              <label className="text-gray-700 font-medium font-satoshi">Address</label>
               <input
                 type="text"
                 name="address"
@@ -232,14 +233,14 @@ function CheckOut() {
                 value={formValues.address}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.address && (
-                <span className="text-red-500">Address is required</span>
+                <span className="text-red-500 font-satoshi">Address is required</span>
               )}
             </div>
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">City</label>
+              <label className="font-satoshi text-gray-700 font-medium">City</label>
               <input
                 type="text"
                 name="city"
@@ -248,14 +249,14 @@ function CheckOut() {
                 value={formValues.city}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.city && (
-                <span className="text-red-500">City is required</span>
+                <span className="text-red-500 font-satoshi">City is required</span>
               )}
             </div>
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">zip code</label>
+              <label className="text-gray-700 font-medium font-satoshi">zip code</label>
               <input
                 type="text"
                 name="zipCode"
@@ -264,14 +265,14 @@ function CheckOut() {
                 value={formValues.zipCode}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.city && (
-                <span className="text-red-500">zip code is required</span>
+                <span className="text-red-500 font-satoshi">zip code is required</span>
               )}
             </div>
             <div className="flex flex-col">
-              <label className="text-gray-700 font-medium">Phone Number</label>
+              <label className="text-gray-700 font-medium font-satoshi">Phone Number</label>
               <input
                 type="tel"
                 name="phone"
@@ -280,16 +281,16 @@ function CheckOut() {
                 value={formValues.phone}
                 onChange={handleInput}
                 required
-                className="mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
+                className="font-satoshi mt-1 p-2 border border-gray-300 rounded-md focus:ring focus:ring-indigo-300"
               />
               {formErrors.phone && (
-                <span className="text-red-500">Phone number is required</span>
+                <span className="text-red-500 font-satoshi">Phone number is required</span>
               )}
             </div>
             <button
               type="button"
               onClick={handlePlaceOrder}
-              className="bg-blue-500 text-white py-2 rounded h-10 mt-7 hover:bg-blue-700 active:border-2 active:border-black"
+              className="font-clash bg-blue-500 text-white py-2 rounded h-10 mt-7 hover:bg-blue-700 active:border-2 active:border-black"
 >
               Place Order
             </button>

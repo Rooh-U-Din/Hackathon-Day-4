@@ -40,13 +40,13 @@ const ProductCategory = async ({params}:ProductProps) => {
   return (
     <div className="">
       <Header />
-      <div className="product-card cursor-pointer flex flex-col md:flex-row gap-5 sm:max-w-[390] sm:ml-0 md:max-w-[950] mt-[50]">
+      <div className="product-card cursor-pointer flex flex-col md:flex-row gap-5  max-w-[390]  ml-0 md:max-w-[950] mt-[50]">
         <Image
           src={product.imageUrl}
           alt={product.name}
           height={500}
           width={550}
-          className="rounded-md hover:opacity-95 md:w-[500] md:h-[500] sm:w-[390] sm:h-[390]"
+          className="rounded-md hover:opacity-95 md:w-[500] md:h-[500]  w-[390]  h-[390]"
         ></Image>
 
         <div className="mt-8">

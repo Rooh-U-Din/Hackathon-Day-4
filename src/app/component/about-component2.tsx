@@ -10,7 +10,7 @@ const AboutCom2 = () => {
                     <br /><br />
                     <p className="text-white font-satoshi">A global brand with local beginnings, our <br /> story begain in a small studio in South <br /> London in early 2014</p>
                     <br />
-                    <Link href="/product" passHref><button className="w-[170] h-[56] text-white bg-[rgb(78,77,147)] mt-[32] sm:hidden md:block">View Collection</button>
+                    <Link href="/product" passHref><button className="w-[170] h-[56] text-white bg-[rgb(78,77,147)] mt-[32]  hidden md:block">View Collection</button>
     </Link>
                 </div>
                 <div className="absolute mt-[337]">
