@@ -46,6 +46,7 @@ const ProductCategory = async ({params}:ProductProps) => {
           alt={product.name}
           height={500}
           width={550}
+          className="rounded-md hover:opacity-95 md:w-[500] md:h-[500] sm:w-[390] sm:h-[390]"
         ></Image>
 
         <div className="mt-8">
