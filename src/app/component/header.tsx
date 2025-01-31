@@ -47,7 +47,7 @@ const Header = () => {
   };
 
   return (
-    <div className="h-[69px] md:block md:w-[1440px] md:h-[132px]">
+    <div className="h-[69px] w-[390] md:block md:w-[1440px] md:h-[132px]">
   <link
     rel="stylesheet"
     href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap"
