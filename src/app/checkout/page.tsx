@@ -172,6 +172,7 @@ function CheckOut() {
         </div>
         
         <div className="w-[390px] h-auto md:max-w-[900px] lg:w-[1280px] bg-[rgba(249,249,249,1)] md:mt-[132px] mx-auto p-4 ml-1">
+          <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
           <h2 className="text-2xl  text-gray-800 mb-4 font-clash">Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col">
@@ -288,14 +289,15 @@ function CheckOut() {
               )}
             </div>
             <button
-              type="button"
-              onClick={handlePlaceOrder}
-              className="font-clash bg-blue-500 text-white py-2 rounded h-10 mt-7 hover:bg-blue-700 active:border-2 active:border-black"
+  type="button"
+  onClick={handlePlaceOrder}
+  className="font-clash bg-blue-500 text-white py-2 px-6 rounded-lg h-10 mt-7 hover:bg-blue-700 active:bg-blue-800 active:scale-95 active:border-2 active:border-black transition-all duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
 >
-              Place Order
-            </button>
+  Place Order
+</button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
