@@ -107,13 +107,14 @@ const Footer2 = () => {
           width={24}
           className="w-[24px] h-[24px]"
         />
+      <Link href="/FAQs" passHref>
+    <button className="absolute font-satoshi z-10 w-[152px] h-[36px] ml-[-157] text-black bg-gray-100 mt-[-250px] hover:text-blue-700">
+      FAQs
+    </button>
+  </Link>
       </div>
 
-      <Link href="/FAQs" passHref>
-        <button className="font-satoshi w-[342px] h-[36px] ml-[1210px] text-black bg-gray-100 mt-[32px] md:w-[170px] hover:text-blue-700">
-          FAQs
-        </button>
-      </Link>
+      
     </div>
   );
 };

@@ -57,7 +57,7 @@ const Header = () => {
     href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700&display=swap"
   />
 
-  <div className="flex mt-[26px] h-[16px] gap-[10px] absolute ml-[208px] md:block">
+  <div className="flex z-10 mt-[26px] h-[16px] gap-[10px] absolute ml-[208px] md:block">
     <div className="flex w-[120px] items-center border-2 border-gray-300 rounded overflow-hidden md:hidden">
       <input
         type="text"
