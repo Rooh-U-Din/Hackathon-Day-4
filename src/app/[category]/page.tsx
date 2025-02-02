@@ -88,6 +88,7 @@ const Category = async ({ params }:ProductProps) => {
           </div>
         ))}
       </div>
+      <br /><br />
       <Footer />
       <Footer2 />
     </div>
