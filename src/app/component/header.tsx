@@ -189,15 +189,31 @@ const Header = () => {
   />
 
   <div className="hidden md:block md:max-w-[675px] md:max-h-[22px] md:absolute md:ml-[382px] md:mt-[20px]">
-    <ul className="flex gap-[44px] font-satoshi text-gray-400">
-      <li>Plant pots</li>
-      <li>Ceramics</li>
-      <li>Tables</li>
-      <li>Chairs</li>
-      <li>Crockery</li>
-      <li>Tableware</li>
-      <li>Cutlery</li>
-    </ul>
+  <ul className="flex gap-[44px] font-satoshi text-gray-400">
+  <li>
+    <Link href="/plant-pots">Plant pots</Link>
+  </li>
+  <li>
+    <Link href="/ceramics">Ceramics</Link>
+  </li>
+  <li>
+    <Link href="/tables">Tables</Link>
+  </li>
+  <li>
+    <Link href="/chairs">Chairs</Link>
+  </li>
+  <li>
+    <Link href="/crockery">Crockery</Link>
+  </li>
+  <li>
+    <Link href="/tableware">Tableware</Link>
+  </li>
+  <li>
+    <Link href="/cutlery">Cutlery</Link>
+  </li>
+</ul>
+
+
   </div>
 </div>
   );
