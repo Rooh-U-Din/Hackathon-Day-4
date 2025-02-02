@@ -5,13 +5,16 @@ import Image from 'next/image';
 import Header from '../component/header';
 import Footer from '../component/footer-sm';
 import Footer2 from '../component/footer-all';
+interface ProductProps {
+  params: Promise<{category:string}>;
+}
 
 // Function to normalize category names (handles spaces and casing)
 function formatCategory(category: string): string {
   return category.replace(/-/g, " ").toLowerCase(); // Converts "plant-pots" → "plant pots"
 }
 
-async function getData(category: string) {
+async function getData(category: string): Promise<Product[] | undefined> {
   const formattedCategory = formatCategory(category);
 
   const query = `*[_type == "product" && lower(category->name) == $category] {
@@ -28,7 +31,6 @@ async function getData(category: string) {
     return data;
   } catch (error) {
     console.error("Error fetching products:", error);
-    return [];
   }
 }
 
@@ -44,7 +46,7 @@ interface Product {
 }
 
 // Category component
-const Category = async ({ params }: { params: { category: string } }) => {
+const Category = async ({ params }:ProductProps) => {
 
 
 
