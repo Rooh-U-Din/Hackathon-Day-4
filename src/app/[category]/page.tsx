@@ -1,4 +1,3 @@
-"use client"
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import React from 'react';
@@ -6,7 +5,6 @@ import Image from 'next/image';
 import Header from '../component/header';
 import Footer from '../component/footer-sm';
 import Footer2 from '../component/footer-all';
-import { addToCart } from '../actions/action';
 
 // Function to normalize category names (handles spaces and casing)
 function formatCategory(category: string): string {
@@ -37,18 +35,16 @@ async function getData(category: string) {
 const Category = async ({ params }: { params: { category: string } }) => {
   console.log("Received category param:", params.category); // Debugging log
 
-  const data: Product[] = await getData(params.category);
+  const category = params.category;
 
-  if (data.length === 0) {
-    return <p className="text-center text-gray-500 mt-10">No products found for {params.category}.</p>;
+  const data = await getData(category);
+ 
+
+
+  if (!category) {
+    return <div>Product not found</div>;
   }
 
-
-    const handleAddToCart = (e: React.MouseEvent, product: Product) => {
-      e.preventDefault();
-      addToCart(product);
-      console.log(product);
-    };
   return (
     <div>
       <Header/>
@@ -76,21 +72,10 @@ const Category = async ({ params }: { params: { category: string } }) => {
               </p>
             </div>
           </Link>
-          <div className="grid grid-cols-1 gap-2 md:flex md:justify-between md:items-center bg-gray-50 max-w-[325px] mt-2 p-2 rounded-sm">
-            <Link href="/shopping" passHref>
-              <button className="w-[100px] bg-blue-700 h-8 rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi">
-                Go to cart
-              </button>
-            </Link>
-            <button
-              className=" w-[100px] bg-blue-700 h-8 rounded text-white hover:bg-blue-800 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out font-satoshi cursor-pointer"
-              onClick={(e) => handleAddToCart(e, product)}
-            >
-              Add to cart
-            </button>
-          </div>
+         
         </div>
       ))}
+      
     </div>
     <Footer/>
     <Footer2/>
