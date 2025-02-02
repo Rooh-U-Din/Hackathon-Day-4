@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Header from '../component/header';
 import Footer from '../component/footer-sm';
 import Footer2 from '../component/footer-all';
+
 interface ProductProps {
-  params: Promise<{category:string}>;
+  params: { category: string };  // Directly define params as an object
 }
 
 // Function to normalize category names (handles spaces and casing)
@@ -46,11 +47,8 @@ interface Product {
 }
 
 // Category component
-const Category = async ({ params }:ProductProps) => {
-
-
-
-  const {category} = await params; // Access params.category directly
+const Category = async ({ params }: ProductProps) => {
+  const { category } = params;  // Access params directly, no need to await
 
   const data = await getData(category); // Fetch data based on the category
 
