@@ -1,13 +1,13 @@
 import { withSentryConfig } from '@sentry/nextjs';
-import { NextConfig } from 'next';
 
-const moduleExports: NextConfig = {
+const moduleExports = {
   reactStrictMode: true,
   swcMinify: true,
   sentry: {
     disableServerWebpackPlugin: false,
     disableClientWebpackPlugin: false,
   },
+  // Add other Next.js configurations here
 };
 
 const sentryWebpackPluginOptions = {

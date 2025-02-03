@@ -6,6 +6,8 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { CgChevronRight } from "react-icons/cg";
 import Header from "../component/header";
+import Footer from "../component/footer-sm";
+import Footer2 from "../component/footer-all";
 
 function CheckOut() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
@@ -299,6 +301,9 @@ function CheckOut() {
         </div>
       </div>
       </div>
+      <Footer/>
+      <Footer2/>
+      
     </div>
   );
 }
