@@ -27,7 +27,7 @@ async function getData(category: string): Promise<Product[] | undefined> {
 
   try {
     const data = await client.fetch(query, { category: formattedCategory });
-    console.log(`Querying products for "${formattedCategory}":`, data); // Debugging log
+    console.log(`Querying products for "${formattedCategory}":`, data); 
     return data;
   } catch (error) {
     console.error("Error fetching products:", error);
