@@ -49,17 +49,20 @@ const Header = () => {
     <div className="h-[69px] max-w-max md:max-w-[1440px] md:h-[132px]">
      
       {/* Search Bar (Mobile) */}
-      <div className="flex z-10 mt-[26px] absolute ml-[208px] md:block">
-        <div className="flex w-[120px] items-center border-2 border-gray-50 rounded overflow-hidden md:hidden">
-          <input
-            type="text"
-            placeholder="Search Here"
-            value={searchQuery}
-            onChange={handleSearch}
-            className="text-sm placeholder-gray-500 focus:outline-none"
-          />
-          <CgSearch className="ml-[-75px] h-[16px] w-[16px] md:hidden" />
-        </div> 
+      <div className="flex z-10 mt-[26px] absolute ml-[208px] md:hidden">
+  <div className="flex w-[120px] items-center border-2 border-gray-50 rounded">
+    <input
+      type="text"
+      placeholder="Search Here"
+      value={searchQuery}
+      onChange={handleSearch}
+      className="w-full text-sm placeholder-gray-500 focus:outline-none"
+    />
+    <div className="relative">
+      <div className="absolute top-1/2 left-0 h-[28px] w-[1px] bg-gray-50 transform -translate-y-1/2"></div>
+      <CgSearch className="h-[24px] w-[24px]" />
+    </div>
+  </div>
         <div className="hamburger-menu sm:hidden relative left-10">
   {/* Hamburger Icon */}
   <button
