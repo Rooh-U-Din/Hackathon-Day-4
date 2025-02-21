@@ -130,7 +130,7 @@ function CheckOut() {
 
         {/* Order Summary */}
         <div className="bg-white shadow-lg rounded-lg p-6 mt-6">
-          <h1 className="text-2xl font-semibold font-clash">Order Summary</h1>
+          <h1 className="text-2xl font-semibold font-clash">Order </h1>
           <div className="flex justify-between py-2 border-b">
             <span className=" md:block font-satoshi font-semibold">Product</span>
             <span className=" md:block font-satoshi font-semibold">Quantity</span>
