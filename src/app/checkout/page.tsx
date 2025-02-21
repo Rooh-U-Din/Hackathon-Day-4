@@ -109,6 +109,9 @@ function CheckOut() {
         {/* Navbar */}
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <nav className="flex items-center gap-2 py-4">
+            <Link href="/" 
+              className="text-gray-600 hover:text-black font-satoshi transition text-sm">Home</Link>
+            <CgChevronRight className="w-4 h-4 font-satoshi text-black" />
             <Link
               href="/shopping"
               className="text-gray-600 hover:text-black font-satoshi transition text-sm"

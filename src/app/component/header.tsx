@@ -4,11 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import {  CgProfile, CgSearch, CgShoppingCart } from "react-icons/cg";
+import { FaTimes, FaBars } from "react-icons/fa";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,6 +47,7 @@ const Header = () => {
 
   return (
     <div className="h-[69px] max-w-max md:max-w-[1440px] md:h-[132px]">
+     
       {/* Search Bar (Mobile) */}
       <div className="flex z-10 mt-[26px] absolute ml-[208px] md:block">
         <div className="flex w-[120px] items-center border-2 border-gray-50 rounded overflow-hidden md:hidden">
@@ -51,8 +59,50 @@ const Header = () => {
             className="text-sm placeholder-gray-500 focus:outline-none"
           />
           <CgSearch className="ml-[-75px] h-[16px] w-[16px] md:hidden" />
-        </div>
+        </div> 
+        <div className="hamburger-menu sm:hidden relative left-10">
+  {/* Hamburger Icon */}
+  <button
+    onClick={toggleMenu}
+    className=" h-6 w-6"
+  >
+    {isOpen ? <FaTimes  /> : <FaBars />}
+  </button>
 
+  {/* Menu Links */}
+  {isOpen && (
+    <div className="menu-links absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+      <Link
+        href="/"
+        onClick={toggleMenu}
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+      >
+        Home
+      </Link>
+      <Link
+        href="/product"
+        onClick={toggleMenu}
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+      >
+        Products
+      </Link>
+      <Link
+        href="/shopping"
+        onClick={toggleMenu}
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+      >
+        Shopping Cart
+      </Link>
+      <Link
+        href="/about"
+        onClick={toggleMenu}
+        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+      >
+        About Us
+      </Link>
+    </div>
+  )}
+</div>
         {/* Search Results (Mobile) */}
         {searchQuery && filteredProducts.length > 0 && (
           <div className="absolute md:hidden bg-white w-[200px] border right-0 mt-6 max-h-72 overflow-scroll border-gray-200 rounded-lg shadow-lg z-10">
@@ -86,7 +136,7 @@ const Header = () => {
 
           {/* Search Results (Desktop) */}
           {searchQuery && filteredProducts.length > 0 && (
-            <div className="absolute bg-white w-[300px] border border-gray-200 z-10 mt-2 rounded-lg shadow-lg">
+            <div className="absolute bg-white w-[300px] h-[400px] overflow-y-scroll border border-gray-200 z-10 mt-2 rounded-lg shadow-lg">
               <ul>
                 {filteredProducts.map((product: Product) => (
                   <li key={product._id} className="font-satoshi p-2 hover:bg-gray-100 flex items-center gap-3">
@@ -128,26 +178,26 @@ const Header = () => {
   />
 
   <div className="hidden md:block md:max-w-[695px] md:max-h-[22px] md:absolute md:ml-[382px] md:mt-[20px]">
-  <ul className="flex gap-[44px] font-satoshi text-gray-400">
-  <li>
+  <ul className="flex gap-[44px] font-satoshi text-gray-400 ">
+  <li className="hover:text-gray-500">
     <Link href="/plant-pots">Plant pots</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/ceramics">Ceramics</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/tables">Tables</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/chairs">Chairs</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/crockery">Crockery</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/tableware">Tableware</Link>
   </li>
-  <li>
+  <li className="hover:text-gray-500">
     <Link href="/cutlery">Cutlery</Link>
   </li>
 </ul>
