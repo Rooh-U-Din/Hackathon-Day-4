@@ -77,14 +77,19 @@ function CheckOut() {
       email: formValues.email,
       address: formValues.address,
       phone: formValues.phone,
-      // zipCode: formValues.zipCode,
       city: formValues.city,
+      
       cartItems: cartItems.map((item) => ({
-        _type: 'reference',
-        _ref: item._id,
+        product: {
+          _type: 'reference',
+          _ref: item._id,
+        },
+        quantity: item.quantity ?? 1, // Store quantity separately
       })),
+    
       totalPrice: subTotal - discount,
     };
+    
 
     try {
       await client.create(orderData);

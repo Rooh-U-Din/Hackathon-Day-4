@@ -1,4 +1,6 @@
 
+/* eslint-disable import/no-anonymous-default-export */
+
 export default {
   name: "Order",
   type: "document",
@@ -40,10 +42,9 @@ export default {
       type: "string",
     },
     {
-        name:"quantity",
-        title:"Quantity",
-        type:"number",
-        
+      name: "quantity",
+      title: "Quantity",
+      type: "number",
     },
     {
       name: "cartItems",
@@ -51,35 +52,41 @@ export default {
       type: "array",
       of: [
         {
-          type: "reference",
-          to: {
-            type: "product",
-            
-          },
-          
+          type: "object",
+          fields: [
+            {
+              name: "product",
+              type: "reference",
+              to: { type: "product" },
+            },
+            {
+              name: "quantity",
+              title: "Quantity",
+              type: "number",
+              validation: (Rule) => Rule.min(1).required(),
+            },
+          ],
         },
       ],
     },
     {
-        name: "totalPrice",
+      name: "totalPrice",
       title: "Total",
-        type: "number",
-
+      type: "number",
     },
     {
-     name: "status",
+      name: "status",
       title: "Status",
       type: "string",
       options: {
         list: [
-
-            {title: "Pending", value: "pending"},
-            {title: "Completed", value: "completed"},
-            {title:"Dispatch", value: "dispatch"},
+          { title: "Pending", value: "pending" },
+          { title: "Completed", value: "completed" },
+          { title: "Dispatch", value: "dispatch" },
         ],
         layout: "radio",
       },
       initialValue: "pending",
-    }
+    },
   ],
 };
