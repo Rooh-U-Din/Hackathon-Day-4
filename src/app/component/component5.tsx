@@ -2,7 +2,7 @@ const Component5 = () => {
   return (
     <div>
       {/* For Small Screens */}
-      <div className="w-[390px] h-[292px] ml-[24px] md:hidden">
+      <div className=" h-[292px] ml-[24px] md:hidden">
         <div className="max-h-[86px] mt-[48px]">
           <h2 className="text-xl font-clash">
             Join the club and get the benefits

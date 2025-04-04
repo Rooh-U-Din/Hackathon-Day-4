@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Component1 = () => {
     return (
-        <div className="bg-[rgb(42,37,75)] h-[502px] w-[390px] relative flex flex-col justify-start md:w-[1280px] md:h-[584px] md:ml-[80px] md:mt-[90px]">
+        <div className="bg-[rgb(42,37,75)] h-[502px] relative flex flex-col justify-start md:w-[1280px] md:h-[584px] md:ml-[80px] md:mt-[90px]">
   <div className="absolute w-[342px] h-[135px] mt-[40px] ml-[24px] md:ml-[60px] md:mt-[60px] md:w-[513px] md:h-[187px]">
     <h2 className="text-white font-clash text-4xl">
       The furniture brand for the future, with timeless designs

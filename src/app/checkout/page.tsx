@@ -323,7 +323,7 @@ function CheckOut() {
 />
               </div>
             </div>
-                <p className="font-satoshi">Kindly complete the required fields</p>
+                <p className="font-satoshi font-semibold">Kindly complete the required fields</p>
           </div>
         </div>
       </div>

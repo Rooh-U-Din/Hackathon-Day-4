@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Component3 = () => {
     return (
-        <div className="max-h-[811px] max-w-[390px] mt-[450px] md:mt-[100px] md:max-w-[1440px] md:max-h-[761px]">
+        <div className="max-h-[811px]  mt-[450px] md:mt-[100px] md:max-w-[1440px] md:max-h-[761px]">
   <h4 className="w-[136px] h-[25px] mt-48 ml-[26px] font-clash text-xl md:ml-[80px]">
     New ceramics
   </h4>

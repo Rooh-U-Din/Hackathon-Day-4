@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Component6 = () => {
     return (
-        <div className="max-w-[390px] h-[828px] md:flex md:mt-[612px] md:max-w-[1440px] md:h-[603px]">
+        <div className=" h-[828px] md:flex md:mt-[612px] md:max-w-[1440px] md:h-[603px]">
   {/* Left Section */}
   <div className="md:ml-[84px] md:mt-[72px]">
     <div className="ml-[24px] mt-[48px] md:w-[536px] md:h-[225px]">

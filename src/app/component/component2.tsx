@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Component2 = () => {
     return (
-        <div className="w-[390px] max-h-[757px] md:w-[1280px] md:h-[355px] md:mx-auto">
+        <div className="max-h-[757px] md:w-[1280px] md:h-[355px] md:mx-auto">
   <h4 className="h-[56px] w-[274px] ml-[24px] mt-[60px] font-clash text-xl md:w-[366px] md:h-[34px] md:mx-auto">
     What makes our brand different
   </h4>
